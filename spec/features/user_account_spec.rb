@@ -8,12 +8,12 @@ describe "User Account Spec" do
 
       fill_in "user_email", with: "me@mail.com"
       fill_in "user_password", with: "password"
-      fill_in "user_password_confirmation", with "password"
+      fill_in "user_password_confirmation", with: "password"
 
-      click_link_or_button "Sign Up"
+      click_link_or_button "create_account"
 
-      expect(page).to have_contect("Account created for me@example.com")
-      expect(User.exists?(email_address: "me@example")).to be_truthy
+      expect(page).to have_content("You have signed up me@mail.com! Now go and share awesome pics!!!")
+      expect(User.exists?(email: "me@mail.com")).to be_truthy
       expect(current_path).to eq(root_path)
     end
   end
