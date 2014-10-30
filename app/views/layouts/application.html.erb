@@ -8,9 +8,8 @@
 </head>
 <body>
   <nav>
-    <a id="create_account" href="<%= new_user_registration_path %>">Create an Account</a>
-    <a id="sign in" href="<%= new_user_session_path %>">Sign in</a>
-    <%= link_to('Sign out', destroy_user_session_path, method: :delete, id: :sign_out) %>
+   <%= render partial: nav_partial %>
+   <% end %>
   </nav>
 
   <% [:notice, :alert].each do |type| %>
